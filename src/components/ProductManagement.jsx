@@ -180,6 +180,8 @@ function ProductManagement() {
                         {errors.quantity && <span className='text-danger'>{errors.quantity}</span>}
                       </div>
                       <button type="button" className="btn btn-secondary" onClick={handleAddProduct}>Add Product</button>
+
+                      <button type="button" className='btn btn-secondary ms-4' onClick={() => setShowAddProductForm(false)}>Cancel</button>
                     </form>
                   </div>
                 </div>
