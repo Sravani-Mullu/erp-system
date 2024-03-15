@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Enterprise Resource Planning System with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simplified interface to manage basic business operations of a company. This includes
+Dashboard - provides an overview of the resources and features.
+Products Management  - Allows to manage products and perform some actions like add, edit, delete.
+Orders Management - Allows to view the orders and update them.
+Orders Calender - shows the orders and their expected delivery dates in a calendar. 
 
-## Available Scripts
+## Table of Contents
+- [Installation](#Installation)
+- [Functionalities](#Functionalities)
 
-In the project directory, you can run:
+## Installation
+### Prerequisites
+- Node.js and npm should be installed. You can download them from [nodejs.org](https://nodejs.org) (20.11.1 LTS)
+### Steps
+ 1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/Sravani-Mullu/erp-system.git
+    ```
+   
+3. **Navigate to the project directory:**
+    ```bash
+    cd erp-system 
+    ```
+    
+4. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+5. **Start the development server:**
+   ```bash
+   npm start
+   ```
+6. **Open the application in your browser:**
+    Open http://localhost:3000 in your browser.
+   
+## Functionalities
 
-### `npm start`
+### Dashboard
+This is the dashboard of the project (first page appears while running the project).
+- It shows the inventory status which includes Total Products, Total Orders, Total Inventory Vlaue, Top Selling Products.
+- last 4 months Sales chart(derived from mock data, as the data was randomly generated, there will be no sales data after March, so the graph won't show anything after March).
+- display Inventory update messages(static).
+- Navbar to navigate to Products, Orders and Order calendar pages.
+### Product Management
+This is the products management page which provides actions to manage products such as add product, edit product, delete product.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Add Product form:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+After clicking the Add Product button Add Product Form appears.
 
-### `npm test`
+Form consists of Id, Name, Price, Quantity Text fields and two buttons Add Product and Cancel.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The "Add Product" button validates the input fields; if all validations are satisfied, it adds the data to local storage.
 
-### `npm run build`
+The “Cancel” button closes the Add Product Form.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+JavaScript validations:
+-	Id: gives error message if id field was empty.
+-	Name: gives error message if name field was empty.
+-	Price: gives error message if price was not a number or empty.
+-	Quantity: gives error message if quantity was not a number or empty.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Edit Product:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When edit button clicked text fields will be appeared allow us to edit the fields.
 
-### `npm run eject`
+The "Save" button validates the input fields; if all validations are satisfied, it updates the data in local storage.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Javascript validations are same as Add Product Form.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Order Management 
+This is the orders management page allows to view details and update the status of the order.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**View Details:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+When “View Details” button clicked full details of that particular order will appeared like above.
 
-## Learn More
+“Close” button closes the details page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Update Status:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+When “Update Status” button clicked select field appear in that particular status column. Only 3 options are provided they are Pending, Shipped, Delivered.
 
-### Code Splitting
+“Update” button updates the edited value in local storage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Order Calendar
+Shows the orders and their delivery dates in a calendar.
 
-### Analyzing the Bundle Size
+### Responsive
+Pages looks good in all screen sizes from desktop to mobile.
+While hovering over the icons in the navbar, the page name will appear.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
